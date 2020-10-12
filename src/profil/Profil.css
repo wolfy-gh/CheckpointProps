@@ -1,0 +1,11 @@
+.profil > h4 {
+    margin : 0;
+    padding :10px 0;
+    border-bottom: 1px solid green;
+    width: 80%;
+}
+.profil > p {
+    margin : 0;
+    padding : 10px;
+    font-size: 1.2rem;
+}
