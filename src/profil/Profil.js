@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import './Profil.css'
 
-function Profil(props) {
+function Profil({fullName,bio,profession,children,handleClick}) {
     const styleProfil = {   display:'grid',
                             gridTemplateColumns:'40% 60%',
                             backgroundColor:'white',
@@ -11,20 +11,20 @@ function Profil(props) {
                             margin :"0 30%",
                             padding:"15px 0"
                         }
-    const handleName = e =>{
-        e.preventDefault()
-        alert("Hello "+props.fullName)
-    }
-    return (
-        <div style={styleProfil} onLoad={handleName}>
-            {props.children}
+    // function handleName(e){
+    //     e.preventDefault()
+    //     alert("Hello "+props.fullName)
+    // }
+    return ( 
+        <div style={styleProfil}  onLoad={e => handleClick(e)} >
+            {children}
             <div className="profil">
                 <h4>Full Name : </h4>
-                <p>{props.fullName}</p>
+                <p>{fullName}</p>
                 <h4>Bio :</h4> 
-                <p>{props.bio}</p>
+                <p>{bio}</p>
                 <h4>Profession :</h4>
-                <p>{props.profession}</p>
+                <p>{profession}</p>
             </div>    
         </div>
     )
